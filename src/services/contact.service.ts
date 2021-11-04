@@ -142,6 +142,10 @@ export class ContactService {
     this.loadContacts()
   }
 
+  public resetFilter() {
+    this.filterBy = { term: '' }
+  }
+
   public loadContacts(): void {
     let contacts = this._contactsDb;
     contacts = this._filter(contacts, this.filterBy.term)

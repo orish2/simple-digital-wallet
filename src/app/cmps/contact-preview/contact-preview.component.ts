@@ -20,16 +20,20 @@ export class ContactPreviewComponent implements OnInit {
 
   onContactClicked(ev: MouseEvent) {
     this.onShowingContactDetails.emit(this.contact._id)
+    this.contactService.resetFilter()
   }
 
   goToDetails() {
     this.router.navigateByUrl(`/contact/${this.contact._id}`)
+    this.contactService.resetFilter()
   }
 
   goToEdit() {
     this.router.navigateByUrl(`/contact/edit/${this.contact._id}`)
+    this.contactService.resetFilter()
   }
   onDeleteContact() {
     this.contactService.deleteContact(this.contact._id)
+    this.contactService.resetFilter()
   }
 }
