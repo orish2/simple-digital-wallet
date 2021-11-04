@@ -16,6 +16,13 @@
     width        : 120px;
     border       : none;
     border-bottom: 1px solid #888;
+
+    @media screen and (max-width:540px) {
+      input {
+        
+        width: 140px;
+      }
+    }
   }
 
   .moves-to-show-header {
