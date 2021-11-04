@@ -1,0 +1,9 @@
+<section class="contact-details flex column gap-8">
+  <img src="https://robohash.org/{{contact.name}}.png" alt="" class="bg-primary" />
+  <p>{{ contact.name }}</p>
+  <p>{{ contact.email }}</p>
+  <p>{{ contact.phone }}</p>
+  <transfer-fund (onTransfer)="handleTransfer($event)"></transfer-fund>
+  <move-list *ngIf="movesToShow.length>0" [moves]="movesToShow"></move-list>
+
+</section>

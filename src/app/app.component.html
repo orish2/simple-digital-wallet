@@ -1,0 +1,7 @@
+<!-- <div class="bg-light-green text-white"> -->
+<div>
+  <div class="app-container">
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+    <p *ngIf="msg" class="user-msg" [ngClass]="[userMsgClass]">{{msg}}</p>
+  </div>

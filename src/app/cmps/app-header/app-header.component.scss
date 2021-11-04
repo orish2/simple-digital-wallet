@@ -1,0 +1,87 @@
+.hamburger-wrapper {
+  width           : 100%;
+  min-height          : 90px;
+  top             : 0;
+  z-index         : 60;
+  right: 0;
+  cursor          : pointer;
+  position        : fixed;
+  display         : none;
+  // background-color: #121212;
+  
+  @media screen and (max-width: 540px) {
+    display: flex;
+  }
+
+
+  .hamburger {
+    display          : none;
+    align-items      : center;
+    position         : absolute;
+    top              : 10px;
+    // top           : 31px;
+    // left 1rem??
+    right             : 15px;
+    width            : 50px;
+    height           : 50px;
+
+    @media screen and (max-width: 540px) {
+      display: flex;
+    }
+
+    >div {
+      background-color      : #fff;
+      // height             : 4px;
+      height                : 2px;
+      width                 : 35px;
+      border-radius         : 5px;
+      position              : relative;
+      display               : flex;
+      justify-content       : center;
+      align-items           : center;
+      transition            : 0.4s ease;
+
+      &::before {
+        content               : '';
+        width                 : 100%;
+        // height          : 4px;
+        height                : 2px;
+        border-radius         : 5px;
+        position              : absolute;
+        // top                : -14px;
+        top                   : -10px;
+        background-color      : inherit;
+      }
+
+      &::after {
+        content               : '';
+        width                 : 100%;
+        border-radius         : 5px;
+        // height             : 4px;
+        height                : 2px;
+        position              : absolute;
+        // top             : 14px;
+        top                   : 10px;
+        background-color      : inherit;
+      }
+    }
+
+    &.open {
+
+      >div {
+        transform: rotate(135deg);
+
+        &::before {
+          top      : 0;
+          transform: rotate(90deg);
+        }
+
+        &::after {
+          top      : 0;
+          transform: rotate(90deg);
+        }
+
+      }
+    }
+  }
+}

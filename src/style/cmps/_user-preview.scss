@@ -1,0 +1,11 @@
+.user-preview {
+    padding: 10px 30px;
+    &:not(:last-child) {
+        border-bottom: 1px solid gray;
+    }
+    .actions {
+        & > :not(:last-child) {
+            margin-inline-end: 5px;
+        }
+    }
+}

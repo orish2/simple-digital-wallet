@@ -1,0 +1,9 @@
+<div class="contact-preview flex align-baseline gap-20" (click)="goToDetails()">
+  <img src="https://robohash.org/{{contact.name}}.png" alt="" class="contact-img" />
+  <p class="contact-name">{{ contact.name }}</p>
+  <div class="actions flex gap-8">
+    <span class="fas fa-info text-primary icon" (click)="goToDetails()" alt=""></span>
+    <span class="fas fa-trash text-primary icon trash-icon" (click)="onDeleteContact()" alt=""></span>
+    <span class="fas fa-edit text-primary icon" (click)="goToEdit()" alt=""></span>
+  </div>
+</div>

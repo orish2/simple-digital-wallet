@@ -1,0 +1,13 @@
+<section class="home flex column gap-8">
+  <h1>Hello {{ loggedInUser.name }}</h1>
+  <div class="flex align-baseline gap-8">
+    <img src="/assets/images/bitcoin.svg " alt="" srcset="">
+    <p>coins: {{ loggedInUser.coins }}</p>
+  </div>
+  <div class="user-balance flex align-baseline gap-8">
+    <img src="/assets/images/bitcoin.svg " alt="" srcset="">
+    <p>BTC {{ bitcoinRate|async }}</p>
+  </div>
+  <p class="last-moves-header">{{loggedInUser.moves.length === 0 ?'No moves to show yet' :'Your last moves:'}}</p>
+  <move-list *ngIf="loggedInUser.moves.length>0" [moves]="loggedInUser.moves"></move-list>
+</section>
