@@ -1,9 +1,0 @@
-<section class="charts-page">
-  <div *ngIf="marketPriceHistory.length>0 " class="flex align-center column">
-    <p>Market price over last 14 days</p>
-    <canvas baseChart width="300" height="300" [datasets]="lineChartData" [labels]="lineChartLabels"
-      [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" chartType="line"
-      [plugins]="lineChartPlugins">
-    </canvas>
-  </div>
-</section>
