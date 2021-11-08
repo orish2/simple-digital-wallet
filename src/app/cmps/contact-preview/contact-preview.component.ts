@@ -1,7 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Contact } from 'src/models/contact.model';
+import { Message } from 'src/models/message.model';
 import { ContactService } from 'src/services/contact.service';
+import { UserMsgService } from 'src/services/user-msg.service';
 
 @Component({
   selector: 'contact-preview',
@@ -12,7 +14,9 @@ export class ContactPreviewComponent implements OnInit {
 
   @Input() contact: Contact
   @Output() onShowingContactDetails = new EventEmitter<string>()
-  constructor(private router: Router, private contactService: ContactService) {
+  deleteContact = false;
+  constructor(private router: Router, private contactService: ContactService,
+    private userMessage: UserMsgService) {
   }
 
   ngOnInit(): void {
@@ -32,8 +36,21 @@ export class ContactPreviewComponent implements OnInit {
     this.router.navigateByUrl(`/contact/edit/${this.contact._id}`)
     this.contactService.resetFilter()
   }
-  onDeleteContact() {
+
+  delete() {
+    this.deleteContact = false;
     this.contactService.deleteContact(this.contact._id)
     this.contactService.resetFilter()
+    this.userMessage.showMsg({
+      msg: `${this.contact.name} contact has been deleted successfully`, className: 'success'
+    } as Message)
+
+  }
+  abort() {
+    this.deleteContact = false;
+  }
+  onDeleteContact(evt: MouseEvent) {
+    // evt.stopPropagation()
+    this.deleteContact = true
   }
 }

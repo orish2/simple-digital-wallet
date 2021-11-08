@@ -3,16 +3,16 @@
   width: 100%;
   border       : 1px solid #f8f8f8;
   border-radius: 10px;
-  &:hover{
-    cursor: pointer;
-  }
-
+  
   .contact-img {
     display         : inline-block;
     height          : 50px;
     border          : 1px solid #ddd;
     border-radius   : 50%;
     background-color: $primary;
+    &:hover{
+      cursor: pointer;
+    }
     
   }
   .contact-name {

@@ -7,9 +7,10 @@
 
 <header class="header flex align-center gap-20">
   <div class="logo">Mister Bitcoin</div>
-  <nav id="nav" class="flex align-center" [ngClass]="{'open':isOpen}">
-    <div routerLinkActive="active"><a class="link" routerLink="/home">Home</a></div>
-    <div routerLinkActive="active"><a class="link" routerLink="/contact">Contacts</a></div>
-    <div routerLinkActive="active"> <a class="link about" routerLink="/statistics">Charts</a></div>
+  <nav id="nav" class="flex align-center" [ngClass]="{'open':isOpen}" (click)="isOpen=false">
+    <div routerLinkActive="active"><a class="link" routerLink="/home" (click)="isOpen=false">Home</a></div>
+    <div routerLinkActive="active"><a class="link" routerLink="/contact" (click)="isOpen=false">Contacts</a></div>
+    <div routerLinkActive="active"> <a class="link about" routerLink="/statistics" (click)="isOpen=false">Charts</a>
+    </div>
   </nav>
 </header>
